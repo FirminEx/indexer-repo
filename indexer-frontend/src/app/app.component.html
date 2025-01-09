@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="header">
+    <h1>User Operation Events</h1>
+    <div class="last-updated">
+      Last updated: {{ lastUpdated | date:'medium' }}
+    </div>
+  </div>
+
+  <div class="filters-section">
+    <div class="filters-grid">
+      <div class="filter-field">
+        <label>Operation Hash:</label>
+        <input type="text" [(ngModel)]="queryParams.operationHash" placeholder="Enter operation hash">
+      </div>
+
+      <div class="filter-field">
+        <label>Sender:</label>
+        <input type="text" [(ngModel)]="queryParams.sender" placeholder="Enter sender address">
+      </div>
+
+      <div class="filter-field">
+        <label>Paymaster:</label>
+        <input type="text" [(ngModel)]="queryParams.paymaster" placeholder="Enter paymaster address">
+      </div>
+
+      <div class="filter-field">
+        <label>Status:</label>
+        <select [(ngModel)]="queryParams.success">
+          @for(option of successOptions; track option.value) {
+            <option [ngValue]="option.value">{{ option.label }}</option>
+          }
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="apply-btn" (click)="applyFilters()">Apply Filters</button>
+      <button class="clear-btn" (click)="clearFilters()">Clear Filters</button>
+    </div>
+  </div>
+  
+  @if(operationEvents.length > 0) {
+    <div class="events-grid">
+      @for(event of operationEvents; track event.operationHash) {
+        <div class="event-card" [class.success]="event.success === 1" [class.failed]="event.success === 0">
+          <div class="card-header">
+            <span class="status-badge">{{ event.success === 1 ? 'Success' : 'Failed' }}</span>
+            <span class="timestamp">{{ event.createdAt | date:'medium' }}</span>
+          </div>
+          
+          <div class="card-content">
+            <div class="field">
+              <label>Operation Hash:</label>
+              <span class="hash">{{ event.operationHash }}</span>
+            </div>
+            
+            <div class="field">
+              <label>Sender:</label>
+              <span class="address">{{ event.sender }}</span>
+            </div>
+            
+            <div class="field">
+              <label>Paymaster:</label>
+              <span class="address">{{ event.paymaster }}</span>
+            </div>
+            
+            <div class="field">
+              <label>Nonce:</label>
+              <span>{{ event.nonce.toString() }}</span>
+            </div>
+            
+            <div class="gas-info">
+              <div class="field">
+                <label>Gas Cost:</label>
+                <span>{{ event.actualGasCost.toString() }} wei</span>
+              </div>
+              
+              <div class="field">
+                <label>Gas Used:</label>
+                <span>{{ event.actualGasUsed.toString() }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="no-events">
+      <p>No operation events found</p>
+    </div>
+  }
+</div>

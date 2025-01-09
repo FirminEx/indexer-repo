@@ -1,0 +1,32 @@
+{
+  "name": "indexer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx src/server.ts",
+    "watch": "npx tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/response-time": "^2.3.8",
+    "alchemy-sdk": "^3.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "express": "^4.21.2",
+    "node-cache": "^5.1.2",
+    "response-time": "^2.3.3",
+    "sqlite3": "^5.1.7",
+    "tsx": "^4.19.2",
+    "winston": "^3.17.0",
+    "zod": "^3.24.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.4.2"
+  }
+}
