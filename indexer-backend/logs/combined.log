@@ -664,3 +664,6 @@
 {"level":"info","message":"Request completed","method":"GET","responseTime":"6.91ms","service":"indexer","statusCode":304,"timestamp":"2025-01-09T12:33:36.445Z"}
 {"level":"info","message":"Cache hit for user-operation-events:{}","service":"indexer","timestamp":"2025-01-09T12:36:07.393Z"}
 {"level":"info","message":"Request completed","method":"GET","responseTime":"0.98ms","service":"indexer","statusCode":304,"timestamp":"2025-01-09T12:36:07.394Z"}
+{"level":"info","message":"Server is running on port 3000","service":"indexer","timestamp":"2025-01-09T12:46:01.544Z"}
+{"level":"info","message":"Server is running on port 3000","service":"indexer","timestamp":"2025-01-09T12:47:08.299Z"}
+{"level":"info","message":"Server is running on port 3000","service":"indexer","timestamp":"2025-01-09T12:47:20.628Z"}
