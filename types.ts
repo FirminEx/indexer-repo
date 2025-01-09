@@ -6,7 +6,7 @@ export type UserOperationEvent = {
   success: number;
   actualGasCost: bigint;
   actualGasUsed: bigint;
-  createdAt: string;
+  createdAt?: string;
 };
 
 export type UserOperationEventQuery = {

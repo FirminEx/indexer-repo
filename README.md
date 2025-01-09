@@ -29,7 +29,6 @@ A web application for indexing and monitoring user operations, consisting of a N
 
 3. Create a `.env` file in the backend directory with required environment variables:
    ```
-   ALCHEMY_API_KEY=
    PROVIDER_URL=
    ```
 

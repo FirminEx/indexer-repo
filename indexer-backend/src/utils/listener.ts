@@ -1,6 +1,6 @@
 import { EventLog } from 'ethers';
+import { UserOperationEvent } from '../../../types';
 import { saveUserOperationEvent } from '../modules/user-operation-events/user-operation-events.repository';
-import { UserOperationEvent } from '../types';
 import { cache, CACHE_KEYS } from './cache';
 import { entryPoint } from './provider';
 
